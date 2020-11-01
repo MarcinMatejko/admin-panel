@@ -39,6 +39,15 @@ export class ClientService {
         "phone": "789456123",
         "email": "patryk@gmail.com"
       },
+      {
+        "firstName": "Bartek",
+        "lastName": "Sroka",
+        "dob": new Date(1980,12,28),
+        "industry": "Podróże",
+        "subcategory": "Zagraniczne",
+        "phone": "789456123",
+        "email": "patryk@gmail.com"
+      },
     ];
   }
   }
