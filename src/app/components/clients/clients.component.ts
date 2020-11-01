@@ -10,14 +10,13 @@ import { Client } from '../../models/Client';
 })
 export class ClientsComponent implements OnInit {
   clients: Client[];
-
-
+  displayedColumns: string[] = ['firstName', 'lastName', 'dob', 'industry', 'subcategory', 'phone', 'email'];
 
   constructor( private clientService: ClientService) { }
 
   ngOnInit(): void {
     this.clients = this.clientService.getClients()
-    console.log(this.clients)
+
   }
 
 }
