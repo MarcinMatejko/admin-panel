@@ -5,7 +5,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 
-
 import { Client } from '../../models/Client';
 
 @Component({
@@ -24,13 +23,13 @@ export class ClientsComponent implements OnInit {
   constructor( private clientService: ClientService) { }
 
   ngOnInit(): void {
-    this.clients = this.clientService.getClients()
-    this.dataSource = new MatTableDataSource(this.clients);
-  }
+    this.clientService.getClients().subscribe((clients) => {
+      this.clients = clients;
+      this.dataSource = new MatTableDataSource(this.clients);
 
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    })
   }
 
   applyFilter(filterValue: string) {
