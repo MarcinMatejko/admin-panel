@@ -14,7 +14,7 @@ import { Client } from '../../models/Client';
 })
 export class ClientsComponent implements OnInit {
   clients: Client[];
-  displayedColumns: string[] = ['firstName', 'lastName', 'dob', 'industry', 'subcategory', 'phone', 'email'];
+  displayedColumns: string[] = ['firstName', 'lastName', 'dob', 'industry', 'subcategory', 'phone', 'email', 'edit'];
   dataSource;
 
   @ViewChild(MatSort) sort: MatSort;

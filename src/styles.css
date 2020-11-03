@@ -13,3 +13,7 @@
 .btn:hover {
   opacity: 0.9;
 }
+
+.btn-edit {
+  font-size: 0.6rem;
+}

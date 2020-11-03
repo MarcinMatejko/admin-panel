@@ -69,6 +69,16 @@
       "phone": "456789123",
       "email": "kjarzyna@gmail.com",
       "id": "qqUZAGd"
+    },
+    {
+      "firstName": "Paweł",
+      "lastName": "Micherda",
+      "dob": "1927-03-14T23:00:00.000Z",
+      "industry": "Media",
+      "subcategory": "Radio",
+      "phone": "987654789",
+      "email": "pawelmicherda@gmail.com",
+      "id": "pbpbMVS"
     }
   ]
 }

@@ -12,12 +12,17 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ClientService {
-  clientsUrl: string = "http://localhost:3000/clients";
+  clientsUrl: string = "http://localhost:3000/clients/";
 
   constructor(private http: HttpClient) { }
 
   getClients(): Observable<Client[]> {
     return this.http.get<Client[]>(this.clientsUrl);
+  }
+
+  getClient(id: string): Observable<Client>{
+    const url = `${this.clientsUrl}/${id}`;
+    return this.http.get<Client>(url)
   }
 
   newClient(client: Client): Observable<Client> {
