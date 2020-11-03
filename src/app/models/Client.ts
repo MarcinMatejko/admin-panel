@@ -6,4 +6,5 @@ export interface Client {
   subcategory: string;
   phone: string;
   email: string;
+  id?: number;
 }

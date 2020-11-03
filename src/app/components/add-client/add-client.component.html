@@ -10,7 +10,7 @@
       name="firstName"
       required
       #firstName="ngModel">
-    <mat-error *ngIf="email.invalid">Imię jest wymagane.</mat-error>
+    <mat-error *ngIf="firstName.invalid">Imię jest wymagane.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
@@ -21,7 +21,7 @@
       ngModel
       name="lastName"
       #lastName="ngModel">
-    <mat-error *ngIf="email.invalid">Nazwisko jest wymagane.</mat-error>
+    <mat-error *ngIf="lastName.invalid">Nazwisko jest wymagane.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
@@ -99,6 +99,7 @@
   </mat-form-field>
   <br>
 </div>
-<button class="btn" [disabled]=(!clientForm.valid)>Dodaj klienta</button>
+<button class="btn">Dodaj klienta</button>
+<!-- [disabled]=(!clientForm.valid) -->
 <!-- <mat-error *ngIf="!clientForm.valid">Proszę o poprawne wypełnienie formularza.</mat-error> -->
 </form>

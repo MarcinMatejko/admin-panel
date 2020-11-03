@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ClientService } from '../../services/client.service';
 import { NgForm} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { Client } from 'src/app/models/Client';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-add-client',
@@ -9,13 +11,25 @@ import { Client } from 'src/app/models/Client';
   styleUrls: ['./add-client.component.css']
 })
 export class AddClientComponent implements OnInit {
+  client: Client = {
+    firstName: '',
+    lastName: '',
+    dob: null,
+    industry: '',
+    subcategory: '',
+    phone: '',
+    email: '',
+    id: null
+  };
+
   maxDate: Date;
-
-  client: Client;
-  @ViewChild('clientForm') form: any;
+  @ViewChild('clientForm') form: NgForm;
 
 
-  constructor() {
+  constructor(
+    private clientService: ClientService,
+    private router: Router
+    ) {
     const currentYear = new Date().getFullYear();
     this.maxDate = new Date(currentYear - 18, 10, 0);
    }
@@ -24,7 +38,17 @@ export class AddClientComponent implements OnInit {
 
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.value)
+  onSubmit({value, valid}: {value: Client, valid: boolean}) {
+
+    console.log(value, valid)
+
+    if(!valid) {
+      console.log('Wypełnij formularz')
+    } else {
+      this.clientService.newClient(value).subscribe(client => {
+      this.router.navigate(['/'])
+       });
+    }
+
   }
 }

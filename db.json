@@ -1,49 +1,74 @@
 {
-  "clients":[
-  {
-    "firstName": "Andrzej",
-    "lastName": "Doe",
-    "dob": "1995,11,17",
-    "industry": "Finanse",
-    "subcategory": "Bank",
-    "phone": "123456789",
-    "email": "andrzej@gmail.com"
-  },
-  {
-    "firstName": "Marek",
-    "lastName": "Smith",
-    "dob": "1990,5,22",
-    "industry": "Media",
-    "subcategory": "Radio",
-    "phone": "987654321",
-    "email": "marek@gmail.com"
-  },
-  {
-    "firstName": "Patryk",
-    "lastName": "Williams",
-    "dob": "1980,12,28",
-    "industry": "Podróże",
-    "subcategory": "Krajowe",
-    "phone": "789456123",
-    "email": "patryk@gmail.com"
-  },
-  {
-    "firstName": "Bartek",
-    "lastName": "Sroka",
-    "dob": "1980,12,28",
-    "industry": "Podróże",
-    "subcategory": "Zagraniczne",
-    "phone": "789456123",
-    "email": "patryk@gmail.com"
-  },
-  {
-    "firstName": "Krzysztof",
-    "lastName": "Dudkowski",
-    "dob": "1980,12,28",
-    "industry": "Media",
-    "subcategory": "TV",
-    "phone": "745612325",
-    "email": "krzysztof@gmail.com"
-  }
-]
+  "clients": [
+    {
+      "firstName": "Andrzej",
+      "lastName": "Doe",
+      "dob": "1995,11,17",
+      "industry": "Finanse",
+      "subcategory": "Bank",
+      "phone": "123456789",
+      "email": "andrzej@gmail.com",
+      "id": "1"
+    },
+    {
+      "firstName": "Marek",
+      "lastName": "Smith",
+      "dob": "1990,5,22",
+      "industry": "Media",
+      "subcategory": "Radio",
+      "phone": "987654321",
+      "email": "marek@gmail.com",
+      "id": "2"
+    },
+    {
+      "firstName": "Patryk",
+      "lastName": "Williams",
+      "dob": "1980,12,28",
+      "industry": "Podróże",
+      "subcategory": "Krajowe",
+      "phone": "789456123",
+      "email": "patryk@gmail.com",
+      "id": "3"
+    },
+    {
+      "firstName": "Bartek",
+      "lastName": "Sroka",
+      "dob": "1980,12,28",
+      "industry": "Podróże",
+      "subcategory": "Zagraniczne",
+      "phone": "789456123",
+      "email": "patryk@gmail.com",
+      "id": "4"
+    },
+    {
+      "firstName": "Krzysztof",
+      "lastName": "Dudkowski",
+      "dob": "1980,12,28",
+      "industry": "Media",
+      "subcategory": "TV",
+      "phone": "745612325",
+      "email": "krzysztof@gmail.com",
+      "id": "5"
+    },
+    {
+      "firstName": "Marcin",
+      "lastName": "Matejko",
+      "dob": "2002-10-08T22:00:00.000Z",
+      "industry": "Podróże",
+      "subcategory": "Krajowe",
+      "phone": "736643949",
+      "email": "matejko.tsp@gmail.com",
+      "id": "l2t_2T4"
+    },
+    {
+      "firstName": "Krzysztof",
+      "lastName": "Jarzyna",
+      "dob": "1955-05-24T23:00:00.000Z",
+      "industry": "Finanse",
+      "subcategory": "Bank",
+      "phone": "456789123",
+      "email": "kjarzyna@gmail.com",
+      "id": "qqUZAGd"
+    }
+  ]
 }
