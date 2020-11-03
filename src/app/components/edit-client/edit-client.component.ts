@@ -21,25 +21,32 @@ export class EditClientComponent implements OnInit {
     email: '',
     id: ''
   }
+  maxDate: Date;
 
   constructor(
     private clientService: ClientService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {
+    const currentYear = new Date().getFullYear();
+    this.maxDate = new Date(currentYear - 18, 10, 0);
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    console.log(this.id)
 
-    this.clientService.getClient(this.id).subscribe(client => {
-      this.client = client;
-      console.log(this.client)
-
-    })
-
-
+    this.clientService.getClient(this.id).subscribe(client => this.client = client)
 
   }
 
+  onSubmit({value, valid}: {value: Client, valid: boolean}) {
+    if(!valid) {
+      console.log('Wypełnij formularz')
+    } else {
+      value.id = this.id
+      this.clientService.updateClient(value).subscribe(client => {
+        this.router.navigate(['/'])
+         });
+    }
+  }
 }

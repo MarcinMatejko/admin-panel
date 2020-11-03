@@ -2,22 +2,22 @@
   "clients": [
     {
       "firstName": "Andrzej",
-      "lastName": "Doe",
-      "dob": "1995,11,17",
+      "lastName": "Maleszka",
+      "dob": "1964-06-22T22:00:00.000Z",
       "industry": "Finanse",
       "subcategory": "Bank",
       "phone": "123456789",
-      "email": "andrzej@gmail.com",
+      "email": "andrzejmaleszka@gmail.com",
       "id": "1"
     },
     {
-      "firstName": "Marek",
-      "lastName": "Smith",
-      "dob": "1990,5,22",
+      "firstName": "Taduesz",
+      "lastName": "Fiajk",
+      "dob": "1988-02-08T23:00:00.000Z",
       "industry": "Media",
       "subcategory": "Radio",
       "phone": "987654321",
-      "email": "marek@gmail.com",
+      "email": "tfijak@gmail.com",
       "id": "2"
     },
     {
@@ -51,13 +51,13 @@
       "id": "5"
     },
     {
-      "firstName": "Marcin",
+      "firstName": "Mateusz",
       "lastName": "Matejko",
       "dob": "2002-10-08T22:00:00.000Z",
       "industry": "Podróże",
       "subcategory": "Krajowe",
       "phone": "736643949",
-      "email": "matejko.tsp@gmail.com",
+      "email": "mati.tsp@gmail.com",
       "id": "l2t_2T4"
     },
     {
@@ -79,6 +79,16 @@
       "phone": "987654789",
       "email": "pawelmicherda@gmail.com",
       "id": "pbpbMVS"
+    },
+    {
+      "firstName": "Michał",
+      "lastName": "Bareja",
+      "dob": "1998-06-17T22:00:00.000Z",
+      "industry": "Finanse",
+      "subcategory": "Ubezpieczenia",
+      "phone": "589741563",
+      "email": "michalbareja@gmail.com",
+      "id": "_EonaVM"
     }
   ]
 }

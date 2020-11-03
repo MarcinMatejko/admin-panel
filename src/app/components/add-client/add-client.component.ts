@@ -40,8 +40,6 @@ export class AddClientComponent implements OnInit {
 
   onSubmit({value, valid}: {value: Client, valid: boolean}) {
 
-    console.log(value, valid)
-
     if(!valid) {
       console.log('Wypełnij formularz')
     } else {

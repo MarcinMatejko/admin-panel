@@ -1,5 +1,6 @@
-<button routerLink="/" class="btn">Powrót na stronę główną</button>
+<button routerLink="/" mat-raised-button color="primary">Powrót na stronę główną</button>
 
+<mat-card>
 <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
 <div class="add-client">
   <mat-form-field appearance="fill">
@@ -99,5 +100,6 @@
   </mat-form-field>
   <br>
 </div>
-<button class="btn">Dodaj klienta</button>
+<button mat-raised-button color="primary">Dodaj klienta</button>
 </form>
+</mat-card>
