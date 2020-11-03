@@ -1,4 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  background-color: #333;
+  color: #f4f4f4;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.5rem;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn:hover {
+  opacity: 0.9;
+}

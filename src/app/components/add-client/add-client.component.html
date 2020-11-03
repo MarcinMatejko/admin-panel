@@ -1,48 +1,104 @@
+<button routerLink="/" class="btn">Powrót na stronę główną</button>
+
+<form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
 <div class="add-client">
   <mat-form-field appearance="fill">
     <mat-label>Imię</mat-label>
-    <input matInput>
+    <input
+      matInput
+      ngModel
+      name="firstName"
+      required
+      #firstName="ngModel">
+    <mat-error *ngIf="email.invalid">Imię jest wymagane.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Nazwisko</mat-label>
-    <input matInput>
+    <input
+      matInput
+      required
+      ngModel
+      name="lastName"
+      #lastName="ngModel">
+    <mat-error *ngIf="email.invalid">Nazwisko jest wymagane.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Data urodzenia</mat-label>
-    <input matInput>
+  <input
+    matInput
+    placeholder="MM/DD/RRRR"
+    required
+    ngModel
+    name="dob"
+    [max]="maxDate"
+    [matDatepicker]="picker"
+    #dob="ngModel"
+    >
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="dob.invalid">Data urodzenia jest wymagana. Minimalny wiek to 18 lat.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Branża</mat-label>
-    <mat-select>
-      <mat-option value="option">Finanse</mat-option>
-      <mat-option value="option">Media</mat-option>
-      <mat-option value="option">Podróże</mat-option>
+    <mat-select
+    matInput
+    required
+    ngModel
+    name="industry"
+    #industry="ngModel">
+      <mat-option value="Finanse">Finanse</mat-option>
+      <mat-option value="Media">Media</mat-option>
+      <mat-option value="Podróże">Podróże</mat-option>
     </mat-select>
+    <mat-error *ngIf="industry.invalid">Wybór branży jest wymagany.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Podkategoria</mat-label>
-    <mat-select>
-      <mat-option value="option">Bank</mat-option>
-      <mat-option value="option">Ubezpieczenia</mat-option>
-      <mat-option value="option">TV</mat-option>
-      <mat-option value="option">Radio</mat-option>
-      <mat-option value="option">Krajowe</mat-option>
-      <mat-option value="option">Zagraniczne</mat-option>
+    <mat-select
+    matInput
+    required
+    ngModel
+    name="subcategory"
+    #subcategory="ngModel">
+      <mat-option value="Bank">Bank</mat-option>
+      <mat-option value="Ubezpieczenia">Ubezpieczenia</mat-option>
+      <mat-option value="TV">TV</mat-option>
+      <mat-option value="Radio">Radio</mat-option>
+      <mat-option value="Krajowe">Krajowe</mat-option>
+      <mat-option value="Zagraniczne">Zagraniczne</mat-option>
     </mat-select>
+    <mat-error *ngIf="industry.invalid">Wybór podkategorii jest wymagany.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Numer Telefonu</mat-label>
-    <input matInput>
+    <input
+    matInput
+    required
+    pattern="^((?!(0))[0-9]{9})$"
+    ngModel
+    name="phone"
+    #phone="ngModel">
+    <mat-error *ngIf="phone.invalid">Numer telefonu jest wymagany. Nie może zaczynać się od 0. Musi zawierać 9 cyfr.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input matInput>
+    <input
+    matInput
+    required
+    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"
+    ngModel
+    name="email"
+    #email="ngModel">
+    <mat-error *ngIf="email.invalid">Podaj prawidłowy email</mat-error>
   </mat-form-field>
   <br>
 </div>
+<button class="btn" [disabled]=(!clientForm.valid)>Dodaj klienta</button>
+<!-- <mat-error *ngIf="!clientForm.valid">Proszę o poprawne wypełnienie formularza.</mat-error> -->
+</form>

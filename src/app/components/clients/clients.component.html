@@ -1,7 +1,7 @@
 <mat-form-field class="form">
   <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Wyszukaj..." >
 </mat-form-field>
-<button routerLink="/client/add">button</button>
+<button routerLink="/client/add" class="btn">Dodaj nowego klienta</button>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort >
 
