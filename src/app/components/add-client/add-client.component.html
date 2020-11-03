@@ -1,6 +1,7 @@
 <button routerLink="/" mat-raised-button color="primary">Powrót na stronę główną</button>
 
 <mat-card>
+  <h2>Dodaj Klienta</h2>
 <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
 <div class="add-client">
   <mat-form-field appearance="fill">
@@ -44,35 +45,35 @@
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Branża</mat-label>
-    <mat-select
-    matInput
-    required
-    ngModel
-    name="industry"
-    #industry="ngModel">
-      <mat-option value="Finanse">Finanse</mat-option>
-      <mat-option value="Media">Media</mat-option>
-      <mat-option value="Podróże">Podróże</mat-option>
-    </mat-select>
-    <mat-error *ngIf="industry.invalid">Wybór branży jest wymagany.</mat-error>
-  </mat-form-field>
-  <br>
+      <mat-select
+        matInput
+        required
+        ngModel
+        name="industry"
+        [(ngModel)]="industry"
+        >
+        <mat-option
+          *ngFor="let industry of industries"
+          [value]="industry"
+          > {{ industry }} </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
   <mat-form-field appearance="fill">
     <mat-label>Podkategoria</mat-label>
     <mat-select
-    matInput
-    required
-    ngModel
-    name="subcategory"
-    #subcategory="ngModel">
-      <mat-option value="Bank">Bank</mat-option>
-      <mat-option value="Ubezpieczenia">Ubezpieczenia</mat-option>
-      <mat-option value="TV">TV</mat-option>
-      <mat-option value="Radio">Radio</mat-option>
-      <mat-option value="Krajowe">Krajowe</mat-option>
-      <mat-option value="Zagraniczne">Zagraniczne</mat-option>
+      matInput
+      required
+      ngModel
+      name="subcategory"
+      [(ngModel)]="subcateogory"
+      >
+      <mat-option
+        *ngFor="let subcateogory of subcategories"
+        [value]="subcateogory"
+        > {{ subcateogory }}
+      </mat-option>
     </mat-select>
-    <mat-error *ngIf="industry.invalid">Wybór podkategorii jest wymagany.</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
@@ -100,6 +101,6 @@
   </mat-form-field>
   <br>
 </div>
-<button mat-raised-button color="primary">Dodaj klienta</button>
+<button mat-raised-button color="primary">Dodaj Klienta</button>
 </form>
 </mat-card>

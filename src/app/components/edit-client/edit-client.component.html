@@ -1,5 +1,6 @@
 <button routerLink="/" mat-raised-button color="primary">Powrót na stronę główną</button>
 
+<mat-card>
 <h2>Edytuj Klienta</h2>
 <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
 <div class="add-client">
@@ -109,3 +110,4 @@
 </div>
 <button mat-raised-button color="primary">Zapisz zmiany</button>
 </form>
+</mat-card>

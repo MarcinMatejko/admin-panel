@@ -22,6 +22,23 @@ export class AddClientComponent implements OnInit {
     id: null
   };
 
+  private map = new Map<string, string[]>([
+    ['Finanse', ["Bank", "Ubezpieczenia"]],
+    ['Media', ["TV", "Radio"]],
+    ['Podróże', ["Krajowe", "Zagraniczne"]],
+  ])
+
+  industry: string
+  subcateogory: string
+
+  get industries(): string[] {
+    return Array.from(this.map.keys());
+  }
+
+  get subcategories(): string[] | undefined {
+    return this.map.get(this.industry);
+  }
+
   maxDate: Date;
   @ViewChild('clientForm') form: NgForm;
 
