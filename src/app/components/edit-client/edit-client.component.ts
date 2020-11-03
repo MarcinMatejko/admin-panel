@@ -23,6 +23,23 @@ export class EditClientComponent implements OnInit {
   }
   maxDate: Date;
 
+  private map = new Map<string, string[]>([
+    ['Finanse', ["Bank", "Ubezpieczenia"]],
+    ['Media', ["TV", "Radio"]],
+    ['Podróże', ["Krajowe", "Zagraniczne"]],
+  ])
+
+  industry: string
+  subcateogory: string
+
+  get industries(): string[] {
+    return Array.from(this.map.keys());
+  }
+
+  get subcategories(): string[] | undefined {
+    return this.map.get(this.industry);
+  }
+
   constructor(
     private clientService: ClientService,
     private router: Router,

@@ -33,9 +33,9 @@
     {
       "firstName": "Bartek",
       "lastName": "Sroka",
-      "dob": "1980,12,28",
-      "industry": "Podróże",
-      "subcategory": "Zagraniczne",
+      "dob": "1991-02-25T23:00:00.000Z",
+      "industry": "Finanse",
+      "subcategory": "Bank",
       "phone": "789456123",
       "email": "patryk@gmail.com",
       "id": "4"
