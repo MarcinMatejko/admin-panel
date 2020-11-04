@@ -1,4 +1,13 @@
 # AdminPanel
+To run this app clone it into Your machine, install all dependencies, and run 
+`npm run dev`- wich run both angular app on `http://localhost:4200/` and json server on `http://localhost:/3000`.
+
+To log in into application You can use:
+login: marcin
+password: 123
+
+I hope You enjoy this app.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
