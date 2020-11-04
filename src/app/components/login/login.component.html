@@ -1,15 +1,16 @@
-<!-- <div class="container">
-  <mat-card>
+<div class="add-client-card">
+  <div>
     <h1>Zaloguj się do Panelu Zarządzania</h1>
-    <form (submit)="onSubmit()">
+    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
       <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
+        <mat-label>Login</mat-label>
         <input
           matInput
-          type="email"
-          name="email"
-          [(ngModel)]="email"
+          type="text"
+          name="login"
           required
+          ngModel
+          #login="ngModel"
         />
       </mat-form-field>
       <br />
@@ -19,12 +20,13 @@
           matInput
           type="password"
           name="password"
-          [(ngModel)]="password"
           required
+          ngModel
+          #password="ngModel"
         />
       </mat-form-field>
       <br />
       <button type="submit" mat-raised-button color="primary">Zaloguj</button>
     </form>
-  </mat-card>
-</div> -->
+  </div>
+</div>
