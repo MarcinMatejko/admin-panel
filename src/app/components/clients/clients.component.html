@@ -6,12 +6,19 @@
       placeholder="Wyszukaj..."
     />
   </mat-form-field>
-  <button routerLink="/client/add" mat-raised-button color="primary">
-    Dodaj nowego klienta
-  </button>
-  <button (click)="logout()" routerLink="/login" mat-raised-button color="warn">
-    Wyloguj
-  </button>
+  <div class="buttons">
+    <button routerLink="/client/add" mat-raised-button color="primary">
+      Dodaj nowego klienta
+    </button>
+    <button
+      (click)="logout()"
+      routerLink="/login"
+      mat-raised-button
+      color="warn"
+    >
+      Wyloguj
+    </button>
+  </div>
 </div>
 
 <div class="mat-elevation-z8">
