@@ -11,7 +11,6 @@ export class AuthGuard implements CanActivate {
 
   canActivate() {
     this.showStorage = localStorage.getItem('loggedIn');
-    console.log(this.showStorage);
 
     if (this.showStorage == 'jestes zalogowany') {
       return true;

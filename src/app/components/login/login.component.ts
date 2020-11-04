@@ -23,10 +23,7 @@ export class LoginComponent implements OnInit {
     this.user = value;
     if (value.login === 'marcin' && value.password === '123') {
       localStorage.setItem('loggedIn', 'jestes zalogowany');
-      console.log('Zostałeś zalogowany');
       this.router.navigate(['/']);
-    } else {
-      console.log('Podaj poprawne wartości');
     }
   }
 }
