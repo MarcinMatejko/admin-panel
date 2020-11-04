@@ -1,0 +1,32 @@
+.clients-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+}
+
+/* Add Client and Edit Components */
+.add-client-card {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.add-client {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-form-field {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.btn-block {
+  width: 90%;
+  max-width: 500px;
+}

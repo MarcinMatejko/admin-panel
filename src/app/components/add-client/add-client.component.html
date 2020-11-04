@@ -1,106 +1,113 @@
-<button routerLink="/" mat-raised-button color="primary">Powrót na stronę główną</button>
+<button routerLink="/" mat-raised-button color="primary">
+  Powrót na stronę główną
+</button>
 
-<mat-card>
-  <h2>Dodaj Klienta</h2>
-<form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
-<div class="add-client">
-  <mat-form-field appearance="fill">
-    <mat-label>Imię</mat-label>
-    <input
-      matInput
-      ngModel
-      name="firstName"
-      required
-      #firstName="ngModel">
-    <mat-error *ngIf="firstName.invalid">Imię jest wymagane.</mat-error>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Nazwisko</mat-label>
-    <input
-      matInput
-      required
-      ngModel
-      name="lastName"
-      #lastName="ngModel">
-    <mat-error *ngIf="lastName.invalid">Nazwisko jest wymagane.</mat-error>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Data urodzenia</mat-label>
-  <input
-    matInput
-    placeholder="MM/DD/RRRR"
-    required
-    ngModel
-    name="dob"
-    [max]="maxDate"
-    [matDatepicker]="picker"
-    #dob="ngModel"
-    >
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-  <mat-error *ngIf="dob.invalid">Data urodzenia jest wymagana. Minimalny wiek to 18 lat.</mat-error>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Branża</mat-label>
-      <mat-select
-        matInput
-        required
-        ngModel
-        name="industry"
-        [(ngModel)]="industry"
+<div class="add-client-card">
+  <h1>Dodaj Klienta</h1>
+  <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+    <div class="add-client">
+      <mat-form-field appearance="fill">
+        <mat-label>Imię</mat-label>
+        <input
+          matInput
+          ngModel
+          name="firstName"
+          required
+          #firstName="ngModel"
+        />
+        <mat-error *ngIf="firstName.invalid">Imię jest wymagane.</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Nazwisko</mat-label>
+        <input matInput required ngModel name="lastName" #lastName="ngModel" />
+        <mat-error *ngIf="lastName.invalid">Nazwisko jest wymagane.</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Data urodzenia</mat-label>
+        <input
+          matInput
+          placeholder="MM/DD/RRRR"
+          required
+          ngModel
+          name="dob"
+          [max]="maxDate"
+          [matDatepicker]="picker"
+          #dob="ngModel"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="dob.invalid"
+          >Data urodzenia jest wymagana. Minimalny wiek to 18 lat.</mat-error
         >
-        <mat-option
-          *ngFor="let industry of industries"
-          [value]="industry"
-          > {{ industry }} </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Podkategoria</mat-label>
-    <mat-select
-      matInput
-      required
-      ngModel
-      name="subcategory"
-      [(ngModel)]="subcateogory"
-      >
-      <mat-option
-        *ngFor="let subcateogory of subcategories"
-        [value]="subcateogory"
-        > {{ subcateogory }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Numer Telefonu</mat-label>
-    <input
-    matInput
-    required
-    pattern="^((?!(0))[0-9]{9})$"
-    ngModel
-    name="phone"
-    #phone="ngModel">
-    <mat-error *ngIf="phone.invalid">Numer telefonu jest wymagany. Nie może zaczynać się od 0. Musi zawierać 9 cyfr.</mat-error>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input
-    matInput
-    required
-    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"
-    ngModel
-    name="email"
-    #email="ngModel">
-    <mat-error *ngIf="email.invalid">Podaj prawidłowy email</mat-error>
-  </mat-form-field>
-  <br>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Branża</mat-label>
+        <mat-select
+          matInput
+          required
+          ngModel
+          name="industry"
+          [(ngModel)]="industry"
+        >
+          <mat-option *ngFor="let industry of industries" [value]="industry">
+            {{ industry }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Podkategoria</mat-label>
+        <mat-select
+          matInput
+          required
+          ngModel
+          name="subcategory"
+          [(ngModel)]="subcateogory"
+        >
+          <mat-option
+            *ngFor="let subcateogory of subcategories"
+            [value]="subcateogory"
+          >
+            {{ subcateogory }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Numer Telefonu</mat-label>
+        <input
+          matInput
+          required
+          pattern="^((?!(0))[0-9]{9})$"
+          ngModel
+          name="phone"
+          #phone="ngModel"
+        />
+        <mat-error *ngIf="phone.invalid"
+          >Numer telefonu jest wymagany. Nie może zaczynać się od 0. Musi
+          zawierać 9 cyfr.</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          required
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"
+          ngModel
+          name="email"
+          #email="ngModel"
+        />
+        <mat-error *ngIf="email.invalid">Podaj prawidłowy email</mat-error>
+      </mat-form-field>
+      <br />
+    </div>
+    <button mat-raised-button color="primary" class="btn-block">
+      Dodaj Klienta
+    </button>
+  </form>
 </div>
-<button mat-raised-button color="primary">Dodaj Klienta</button>
-</form>
-</mat-card>

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { Client } from 'src/app/models/Client';
-import { Router, ActivatedRoute } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpRequest } from '@angular/common/http';
 
 @Component({
   selector: 'app-edit-client',
   templateUrl: './edit-client.component.html',
-  styleUrls: ['./edit-client.component.css']
+  styleUrls: ['./edit-client.component.css'],
 })
 export class EditClientComponent implements OnInit {
   id: string;
@@ -19,18 +19,18 @@ export class EditClientComponent implements OnInit {
     subcategory: '',
     phone: '',
     email: '',
-    id: ''
-  }
+    id: '',
+  };
   maxDate: Date;
 
   private map = new Map<string, string[]>([
-    ['Finanse', ["Bank", "Ubezpieczenia"]],
-    ['Media', ["TV", "Radio"]],
-    ['Podróże', ["Krajowe", "Zagraniczne"]],
-  ])
+    ['Finanse', ['Bank', 'Ubezpieczenia']],
+    ['Media', ['TV', 'Radio']],
+    ['Podróże', ['Krajowe', 'Zagraniczne']],
+  ]);
 
-  industry: string
-  subcateogory: string
+  industry: string;
+  subcateogory: string;
 
   get industries(): string[] {
     return Array.from(this.map.keys());
@@ -52,18 +52,18 @@ export class EditClientComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
 
-    this.clientService.getClient(this.id).subscribe(client => this.client = client)
-
+    this.clientService
+      .getClient(this.id)
+      .subscribe((client) => (this.client = client));
   }
 
-  onSubmit({value, valid}: {value: Client, valid: boolean}) {
-    if(!valid) {
-      console.log('Wypełnij formularz')
+  onSubmit({ value, valid }: { value: Client; valid: boolean }) {
+    if (!valid) {
+      console.log('Wypełnij formularz');
     } else {
-      value.id = this.id
-      this.clientService.updateClient(value).subscribe(client => {
-        this.router.navigate(['/'])
-         });
+      value.id = this.id;
+      this.clientService.updateClient(value).subscribe();
+      this.router.navigate(['/']);
     }
   }
 }
